@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilustraciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --accent-color: #e91e63;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      padding: 20px;
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      color: var(--accent-color);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+  width: 200%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 5/5;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Irene Canalejo Rubio - Artista Digital</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="disenos-graficos.html">Diseños Gráficos</a>
+      <a href="ilustraciones.html">Ilustraciones</a>
+      <a href="ediciones-video.html">Ediciones de Video</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2 class="section-title">Ilustraciones</h2>
+    <div class="gallery">
+      <img src="imagenes/ilustracion1.png" alt="Ilustración 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion2.png" alt="Ilustración 2" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion3.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion1.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion4.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion5.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion2.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion6.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion7.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion3.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion4.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion5.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+    </div>
+  </section>
+
+  <div id="lightbox" onclick="cerrarLightbox()">
+    <img id="imagen-ampliada" src="" alt="Imagen ampliada">
+  </div>
+
+  <footer>
+    &copy; 2025 Irene Canalejo. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function ampliarImagen(img) {
+      const lightbox = document.getElementById("lightbox");
+      const imagenAmpliada = document.getElementById("imagen-ampliada");
+      imagenAmpliada.src = img.src;
+      lightbox.style.display = "flex";
+    }
+
+    function cerrarLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>
