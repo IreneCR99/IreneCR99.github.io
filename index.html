@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Inicio - Portfolio</title>
+  <title>Inicio - Irene Canalejo</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* --- ESTILOS GENERALES --- */
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -13,15 +15,14 @@
       color: #fff;
     }
 
-    /* HEADER Y MENÚ */
     header {
-      padding: 20px;
+      position: sticky;
+      top: 0;
       background-color: #111;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
       z-index: 1000;
     }
 
@@ -30,9 +31,13 @@
       margin: 0;
     }
 
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
     nav a {
       color: #fff;
-      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
@@ -42,65 +47,63 @@
       color: #e91e63;
     }
 
-    /* SLIDER */
-    .slider {
-      position: relative;
+    .carrusel {
       width: 100%;
-      height: 80vh;
       overflow: hidden;
+      margin-bottom: 50px;
     }
 
-    .slides {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      animation: slide 20s infinite linear;
-    }
-
-    .slides img {
+    .carrusel img {
       width: 100%;
-      height: 100%;
+      max-height: 80vh;
       object-fit: cover;
+      display: block;
     }
 
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0%); }
-    }
-
-    /* DESCRIPCIÓN */
-    .descripcion-principal {
-      text-align: center;
-      padding: 40px 20px;
-      max-width: 800px;
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
-    .descripcion-principal h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #ffffff;
+    h2 {
+      color: #e91e63;
+      text-align: center;
     }
 
-    .descripcion-principal p {
-      font-size: 1.2rem;
+    p {
+      text-align: center;
       line-height: 1.6;
-      color: #ccc;
     }
-     /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
-     @media (max-width: 768px) {
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
+    }
+
+    /* --- 🌐 DISEÑO RESPONSIVE PARA MÓVIL --- */
+    @media (max-width: 768px) {
       header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        padding: 15px 10px;
+        z-index: 999;
       }
 
       nav {
-        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+      }
+
+      nav a {
+        font-size: 16px;
+        margin: 5px 0;
       }
 
       .carrusel img {
@@ -111,16 +114,17 @@
         padding: 30px 15px;
       }
 
-      p {
-        font-size: 1rem;
+      body {
+        padding-top: 140px; /* espacio para que el header no tape el contenido */
       }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- ENCABEZADO -->
   <header>
-    <h1>Irene Canalejo Rubio - Artista Digital</h1>
+    <h1>Irene Canalejo</h1>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="sobre-mi.html">Sobre mí</a>
@@ -131,23 +135,21 @@
     </nav>
   </header>
 
-  <!-- SLIDER -->
-  <div class="slider">
-    <div class="slides">
-      <img src="ilustracion1.png" alt="Ilustración 1" />
-      <img src="ilustracion2.png" alt="Ilustración 2" />
-      <img src="ilustracion3.png" alt="Ilustración 3" />
-      
-    </div>
+  <div class="carrusel">
+    <img src="imagenes/ilustracion1.png" alt="Imagen destacada">
   </div>
 
-  <!-- DESCRIPCIÓN -->
-  <div class="descripcion-principal">
-    <h1>Bienvenid@ a mi portfolio</h1>
+  <section>
+    <h2>Bienvenid@s a mi portafolio</h2>
     <p>
-      Esta página web es un espacio personal donde muestro mis proyectos de diseño gráfico, ilustración y edición de vídeo. Aquí podrás explorar mi estilo, mis habilidades y algunos de los trabajos que más me representan.
+      Aquí podrás encontrar una selección de mis trabajos en diseño gráfico, ilustración y edición de video.  
+      ¡Explora los apartados del menú y descubre más sobre mí!
     </p>
-  </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Irene Canalejo. Todos los derechos reservados.
+  </footer>
 
 </body>
 </html>
