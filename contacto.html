@@ -81,6 +81,31 @@
       padding: 40px 20px;
       color: #777;
     }
+     /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
+     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .carrusel img {
+        max-height: 50vh;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
   </style>
 </head>
 <body>
@@ -101,22 +126,14 @@
   <h2>📬 Envíame un mensaje</h2>
 
   <!-- Formulario de contacto -->
-  <form action="https://formspree.io/f/moqgqvek" method="POST">
+  <form action="https://formspree.io/f/mnndjzlp" method="POST">
     <input type="text" name="name" placeholder="Tu nombre" required>
     <input type="email" name="email" placeholder="Tu correo electrónico" required>
     <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
     <input type="submit" value="Enviar mensaje">
   </form>
 
-  <!-- Mapa de ubicación -->
-  <div class="mapa">
-    <h2>📍 Estoy cerca de aquí</h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47788.0857469705!2d2.291949433990097!3d41.61887240202906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c5362c85e281%3A0x8cbf617f130c5ff7!2sLa%20Roca%20del%20Vall%C3%A8s%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1712678464363!5m2!1ses!2ses"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
   </div>
-  <p>Teléfono : <strong>684331576</strong></p>
   <p>linkedin: <a href="https://www.linkedin.com/in/irene-canalejo-rubio-666aa6333/" style="color: var(--accent-color);">Irene Canalejo Rubio</a></p>
 </section>
 

@@ -94,25 +94,37 @@
       text-align: center;
     }
 
-    .descarga-cv a {
-      background-color: #e91e63;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .descarga-cv a:hover {
-      background-color: #c2185b;
-    }
 
     footer {
       text-align: center;
       padding: 40px 20px;
       color: #777;
     }
+     /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
+     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .carrusel img {
+        max-height: 50vh;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
   </style>
 </head>
 <body>
@@ -170,10 +182,6 @@
       <img src="Maya.png" alt="Maya">
       <img src="zbrush.png" alt="Zbrush">
       <!-- Añade más si quieres -->
-    </div>
-
-    <div class="descarga-cv">
-      <a href="CV_CanalejoIrene.pdf" download>Descargar CV en PDF</a>
     </div>
   </section>
 
