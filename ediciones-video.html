@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ediciones de Video - Irene Canalejo</title>
+  <title>Ediciones de Video</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
     body {
       margin: 0;
@@ -15,13 +14,13 @@
     }
 
     header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
       padding: 20px;
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
@@ -30,13 +29,9 @@
       margin: 0;
     }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
@@ -47,14 +42,31 @@
     }
 
     section {
-      padding: 60px 40px;
-      max-width: 1000px;
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    h2 {
-      color: #e91e63;
+    .galeria-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .video-item {
       text-align: center;
+    }
+
+    .video-item video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #111;
+    }
+
+    .video-item p {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #ccc;
     }
 
     footer {
@@ -62,63 +74,73 @@
       padding: 40px 20px;
       color: #777;
     }
-
+    /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
     @media (max-width: 768px) {
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-        z-index: 999;
+        text-align: center;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
       }
 
-      nav a {
-        font-size: 16px;
-        margin: 5px 0;
+      .carrusel img {
+        max-height: 50vh;
       }
 
       section {
         padding: 30px 15px;
       }
 
-      body {
-        padding-top: 140px;
+      p {
+        font-size: 1rem;
       }
-    }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <h1>Irene Canalejo</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="sobre-mi.html">Sobre mí</a>
-      <a href="disenos-graficos.html">Diseños Gráficos</a>
-      <a href="ilustraciones.html">Ilustraciones</a>
-      <a href="ediciones-video.html">Ediciones de Video</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<header>
+  <h1>Irene Canalejo</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="sobre-mi.html">Sobre mí</a>
+    <a href="disenos-graficos.html">Diseños Gráficos</a>
+    <a href="ilustraciones.html">Ilustraciones</a>
+    <a href="ediciones-video.html">Ediciones de Video</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
 
-  <section>
-    <h2>Ediciones de Video</h2>
-    <p style="text-align: center;">Aquí irá el contenido de la sección ediciones de video.</p>
-  </section>
+<section>
+  <h2 style="text-align: center; color: #e91e63;">🎬 Mis Ediciones de Video</h2>
 
-  <footer>
-    &copy; 2025 Irene Canalejo. Todos los derechos reservados.
-  </footer>
+  <div class="galeria-videos">
+
+    <div class="video-item">
+      <video src="videos/edicion1.mp4" controls></video>
+      <p>Este video presenta la renovación de la identidad visual de ArqueoSpace a través de impactantes motion graphics que reflejan su visión futurista y científica. La pieza culmina con la introducción de un prototipo de satélite en 3D, desarrollado como parte de una teoría con base científica que explora la posibilidad real de establecer futuras civilizaciones en Marte. Un viaje visual que fusiona tecnología, exploración espacial y proyección del conocimiento hacia nuevas fronteras.</p>
+    </div>
+
+    <div class="video-item">
+      <video src="videos/edicion2.mp4" controls></video>
+      <p>Este video combina ilustraciones animadas y motion graphics para explorar de forma visual y emocional la psicología detrás de la depresión y el aislamiento. A través de metáforas visuales y narración reflexiva, se muestra el viaje interno de una persona atrapada en la oscuridad de sus pensamientos, enfrentando la desconexión con el mundo exterior. La animación da vida a sensaciones invisibles como la tristeza persistente, la falta de motivación y la lucha por reconectar con uno mismo y con los demás. Una mirada íntima, honesta y visualmente poderosa sobre la experiencia humana de la depresión.</p>
+    </div>
+
+    <div class="video-item">
+      <video src="videos/edicion3.mp4" controls></video>
+      <p>Este video publicitario presenta a BlueFox, un estudio creativo especializado en edición de video y producción multimedia. A través de una fusión dinámica de clips reales, efectos visuales, motion graphics, animaciones tipográficas y técnicas avanzadas de postproducción, se transmite el espíritu innovador y versátil del estudio. Cada elemento visual ha sido cuidadosamente diseñado para reflejar el talento y la creatividad que BlueFox aplica en cada proyecto, desde contenido digital hasta campañas audiovisuales de alto impacto.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Irene Canalejo. Todos los derechos reservados.
+</footer>
 
 </body>
 </html>

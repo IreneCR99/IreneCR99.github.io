@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diseños Gráficos - Irene Canalejo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseños Gráficos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,112 +12,136 @@
       background-color: #000;
       color: #fff;
     }
-
     header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
       padding: 20px;
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
-
     header h1 {
       font-size: 24px;
       margin: 0;
     }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
-
     nav a:hover {
       color: #e91e63;
     }
+    .galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  }
 
-    section {
-      padding: 60px 40px;
-      max-width: 1000px;
-      margin: 0 auto;
+
+      gap: 20px;
+      padding: 40px;
     }
-
-    h2 {
-      color: #e91e63;
+    .proyecto {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
       text-align: center;
+      transition: transform 0.3s;
     }
-
+    .proyecto:hover {
+      transform: scale(1.02);
+    }
+    .proyecto img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .proyecto h3 {
+      margin: 15px;
+      color: #e91e63;
+    }
     footer {
       text-align: center;
       padding: 40px 20px;
       color: #777;
     }
-
+    /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
     @media (max-width: 768px) {
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-        z-index: 999;
+        text-align: center;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
       }
 
-      nav a {
-        font-size: 16px;
-        margin: 5px 0;
+      .carrusel img {
+        max-height: 50vh;
       }
 
       section {
         padding: 30px 15px;
       }
 
-      body {
-        padding-top: 140px;
+      p {
+        font-size: 1rem;
       }
-    }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <h1>Irene Canalejo</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="sobre-mi.html">Sobre mí</a>
-      <a href="disenos-graficos.html">Diseños Gráficos</a>
-      <a href="ilustraciones.html">Ilustraciones</a>
-      <a href="ediciones-video.html">Ediciones de Video</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<header>
+  <h1>Irene Canalejo Rubio - Artista Digital</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="sobre-mi.html">Sobre mí</a>
+    <a href="disenos-graficos.html">Diseños Gráficos</a>
+    <a href="ilustraciones.html">Ilustraciones</a>
+    <a href="ediciones-video.html">Ediciones de Video</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
 
-  <section>
-    <h2>Diseños Gráficos</h2>
-    <p style="text-align: center;">Aquí irá el contenido de la sección diseños gráficos.</p>
-  </section>
+<section class="galeria">
+  <a href="proyecto1.html" class="proyecto">
+    <img src="imagenes/proyecto1.png" alt="Proyecto 1">
+    <h3>Proyecto 1</h3>
+  </a>
+  <a href="proyecto2.html" class="proyecto">
+    <img src="imagenes/proyecto2.png" alt="Proyecto 2">
+    <h3>Proyecto 2</h3>
+  </a>
+  <a href="proyecto3.html" class="proyecto">
+    <img src="imagenes/proyecto3.png" alt="Proyecto 3">
+    <h3>Proyecto 3</h3>
+  </a>
+  <a href="proyecto4.html" class="proyecto">
+    <img src="imagenes/proyecto4.png" alt="Proyecto 4">
+    <h3>Proyecto 4</h3>
+  </a>
+  <a href="proyecto5.html" class="proyecto">
+    <img src="imagenes/proyecto5.png" alt="Proyecto 5">
+    <h3>Proyecto 5</h3>
+  </a>
+  <a href="proyecto6.html" class="proyecto">
+    <img src="imagenes/proyecto6.png" alt="Proyecto 6">
+    <h3>Proyecto 6</h3>
+  </a>
+</section>
 
-  <footer>
-    &copy; 2025 Irene Canalejo. Todos los derechos reservados.
-  </footer>
+<footer>
+  &copy; 2025 Irene Canalejo. Todos los derechos reservados.
+</footer>
 
 </body>
 </html>

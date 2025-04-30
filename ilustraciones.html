@@ -2,26 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ilustraciones - Irene Canalejo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilustraciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --accent-color: #e91e63;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
       padding: 20px;
+      background-color: #1e1e1e;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
@@ -30,31 +35,69 @@
       margin: 0;
     }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
     nav a {
-      color: #fff;
+      color: var(--text-color);
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #e91e63;
+      color: var(--accent-color);
     }
 
     section {
-      padding: 60px 40px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    h2 {
-      color: #e91e63;
-      text-align: center;
+    .section-title {
+      color: var(--accent-color);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+  width: 200%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 5/5;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
     }
 
     footer {
@@ -62,45 +105,37 @@
       padding: 40px 20px;
       color: #777;
     }
-
+    /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
     @media (max-width: 768px) {
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-        z-index: 999;
+        text-align: center;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
       }
 
-      nav a {
-        font-size: 16px;
-        margin: 5px 0;
+      .carrusel img {
+        max-height: 50vh;
       }
 
       section {
         padding: 30px 15px;
       }
 
-      body {
-        padding-top: 140px;
+      p {
+        font-size: 1rem;
       }
-    }
   </style>
 </head>
-
 <body>
 
   <header>
-    <h1>Irene Canalejo</h1>
+    <h1>Irene Canalejo Rubio - Artista Digital</h1>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="sobre-mi.html">Sobre mí</a>
@@ -112,13 +147,42 @@
   </header>
 
   <section>
-    <h2>Ilustraciones</h2>
-    <p style="text-align: center;">Aquí irá el contenido de la sección ilustraciones.</p>
+    <h2 class="section-title">Ilustraciones</h2>
+    <div class="gallery">
+      <img src="imagenes/ilustracion1.png" alt="Ilustración 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion2.png" alt="Ilustración 2" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion3.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion1.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion4.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion5.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion2.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion6.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/ilustracion7.png" alt="Ilustración 3" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion3.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion4.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+      <img src="imagenes/animacion5.gif" alt="Animación 1" onclick="ampliarImagen(this)">
+    </div>
   </section>
+
+  <div id="lightbox" onclick="cerrarLightbox()">
+    <img id="imagen-ampliada" src="" alt="Imagen ampliada">
+  </div>
 
   <footer>
     &copy; 2025 Irene Canalejo. Todos los derechos reservados.
   </footer>
 
+  <script>
+    function ampliarImagen(img) {
+      const lightbox = document.getElementById("lightbox");
+      const imagenAmpliada = document.getElementById("imagen-ampliada");
+      imagenAmpliada.src = img.src;
+      lightbox.style.display = "flex";
+    }
+
+    function cerrarLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </body>
 </html>
