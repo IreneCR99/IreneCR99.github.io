@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre mí - Irene Canalejo</title>
+  <title>Sobre mí</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
     body {
       margin: 0;
@@ -15,13 +14,13 @@
     }
 
     header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
       padding: 20px;
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
@@ -30,13 +29,9 @@
       margin: 0;
     }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
@@ -47,60 +42,95 @@
     }
 
     section {
-      padding: 60px 40px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    h2 {
+    .foto-texto {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .foto-perfil {
+      width: 250px;
+      height: 250px;
+      background-color: #333;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .texto-presentacion {
+      flex: 1;
+    }
+
+    h2, h3 {
       color: #e91e63;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .iconos-programas {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .iconos-programas img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .descarga-cv {
+      margin-top: 40px;
       text-align: center;
     }
+
 
     footer {
       text-align: center;
       padding: 40px 20px;
       color: #777;
     }
-
-    @media (max-width: 768px) {
+     /* --- 🔁 BLOQUE RESPONSIVE PARA MÓVILES --- */
+     @media (max-width: 768px) {
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         flex-direction: column;
-        align-items: center;
-        padding: 15px 10px;
-        z-index: 999;
+        text-align: center;
       }
 
       nav {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
       }
 
-      nav a {
-        font-size: 16px;
-        margin: 5px 0;
+      .carrusel img {
+        max-height: 50vh;
       }
 
       section {
         padding: 30px 15px;
       }
 
-      body {
-        padding-top: 140px;
+      p {
+        font-size: 1rem;
       }
-    }
   </style>
 </head>
-
 <body>
 
   <header>
-    <h1>Irene Canalejo</h1>
+    <h1>Irene Canalejo Rubio - Artista Digital</h1>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="sobre-mi.html">Sobre mí</a>
@@ -112,8 +142,47 @@
   </header>
 
   <section>
-    <h2>Sobre mí</h2>
-    <p style="text-align: center;">Aquí irá el contenido de la sección sobre mí.</p>
+    <div class="foto-texto">
+      <!-- Reemplaza 'foto-perfil.jpg' por el nombre de tu foto -->
+      <img src="imagenesfoto-perfil.png" alt="Foto de Irene" class="foto-perfil">
+      
+      <div class="texto-presentacion">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy Irene Canalejo, diseñadora gráfica entusiasta, creativa y con formación especializada en arte digital, ilustración y entornos interactivos. Me gusta trabajar en equipo y aportar soluciones visuales que conecten con las personas.
+        </p>
+      </div>
+    </div>
+
+    <h3>🎓 Formación Académica</h3>
+    <ul>
+      <li>Grado Superior en Diseño Gráfico – Escola Pau Gargallo (2024)</li>
+      <li>Grado Superior en Animación 3D – CEV (2020)</li>
+      <li>Bachillerato Artístico – Institut Alexandre Satorras (2018)</li>
+    </ul>
+
+    <h3>💼 Experiencia Relevante</h3>
+    <ul>
+      <li>Becaria en Diseño Gráfico – Vertisol (2023)</li>
+      <li>Becaria en Desarrollo de Videojuegos – Omnidrone (2020)</li>
+    </ul>
+
+    <h3>🧠 Habilidades Técnicas</h3>
+    <p>Creatividad, atención al detalle, adaptabilidad, trabajo en equipo, pensamiento visual.</p>
+
+    <h3>🛠️ Programas que utilizo</h3>
+    <div class="iconos-programas">
+      <img src="photoshop.png" alt="Photoshop">
+      <img src="ilustrator.png" alt="Illustrator">
+      <img src="indesign.png" alt="InDesign">
+      <img src="aftereffects.png" alt="After Effects">
+      <img src="premier.png" alt="Premier Pro">
+      <img src="lightroom.png" alt="Lightroom">
+      <img src="Blender.png" alt="Blender">
+      <img src="Maya.png" alt="Maya">
+      <img src="zbrush.png" alt="Zbrush">
+      <!-- Añade más si quieres -->
+    </div>
   </section>
 
   <footer>
